@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+    </nav>
+
+    <main>
+        <h1 class="center-align">Welcome To our Website!!!</h1>
+        <img src="images1.jpeg" alt="Welcome Home">
+    </main>
+
+
+    <footer class="footer">
+        <p class="footer-part">Copyright @2024 by Srimathy Kumar</p>
+    </footer>
+<script>
+    const menu = document.querySelector('.menu');
+    const menuList = document.querySelector('nav ul');
+    menu.addEventListener('click',(e)=>{
+        menuList.classList.toggle('showmenu');
+    })
+</script>    
+</body>
+</html>

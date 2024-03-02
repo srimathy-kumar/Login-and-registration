@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+        <div class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+    </nav>
+    <main>
+        <div class="topspace">
+            <button type="button" class="addbutton" onclick="redirectToAdd()">Add Users</button>
+            </div>
+            <div>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>admin</td>
+                    <td>srimathy.mec@gmail.com</td>
+                    <td>password</td>
+                    <td><button type="button" class="editbutton" onclick="redirectToEdit()">Edit</button></td>
+                    <td><button type="button" class="viewbutton" onclick="redirectToView()">View</button></td>
+                    <td><button type="button" class="deletebutton" onclick="redirectToDelete()">Delete</button></td>
+                    <td></td>
+                </tr>
+                
+            </table>
+        
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-part">Copyright @2024 by Srimathy Kumar</p>
+    </footer>
+<script>
+    const menu = document.querySelector('.menu');
+    const menuList = document.querySelector('nav ul');
+    menu.addEventListener('click',(e)=>{
+        menuList.classList.toggle('showmenu');
+    })
+
+
+    function redirectToAdd(){
+        window.location.href="add.html";
+    }
+
+    function redirectToEdit(){
+        window.location.href="Update.html";
+    }
+
+    function redirectToView(){
+        window.location.href="view.html";
+    }
+
+    function redirectToDelete(){
+        window.location.href="delete.js";
+    }
+</script>    
+</body>
+</html>

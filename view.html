@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Details</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+    <main>
+    <div>
+        <form class="form">
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>admin</td>
+                <td>srimathy.mec@gmail.com</td>
+                <td>password</td>
+                <td><button type="button" class="editbutton">Edit</button></td>
+                <td><button type="button" class="viewbutton">View</button></td>
+                <td><button type="button" class="deletebutton">Delete</button></td>
+                <td></td>
+            </tr>            
+        </table>
+        <div style="text-align: center;">
+        <button type="button" class="goback" onclick="redirecttoGoBack()">Go Back</button>
+    </div>
+    </form>
+    
+    </div>
+</main>
+
+
+    <script>
+        function redirecttoGoBack(){
+            window.location.href="home.html";
+        }
+
+
+
+
+app.get('api/users',(req,res) =>{
+    const sql = 'SELECT * from users';
+    db.query(sql,(err,result) =>{
+        if(err){
+            throw err;
+        }
+        res.json(result);
+    });
+});
+    </script>
+</body>
+</html>

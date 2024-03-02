@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <form class="form1" id="loginForm">
+            <h2>Login Form</h2>
+            <div class="form-style">
+                <div class="input-text">
+                    <label for="user">Username</label><br>
+                    <input type="text" name="user" id="user" placeholder="Enter Username"><br>
+                    <div class="error" id="nameErr"></div>
+                </div>
+                <div class="input-text">
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="pass" id="pass" placeholder="Enter Password">
+                    <div class="error" id="passErr"></div>
+                </div>
+            </div>
+            <div class="align-center">
+                <button type="submit" name="login">Login</button>
+            </div>
+            <div  class="align-center">
+                <p>Don't have account? <a href="register.html">SignUp</a></p>
+            </div> 
+        </form>
+    </div>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit',function(event){
+    event.preventDefault();
+    const username = document.getElementById('user').value;
+    const password = document.getElementById('pass').value;
+    
+    if(username === ''){
+        alert('Please enter the name');
+    }
+    else if(password === ''){
+
+        alert('Please enter the password');
+    }
+    else if(username === 'admin' && password === 'password' ){
+        alert('Login Successful');
+        window.location.href="home.html";
+    }
+    else{
+        alert('Invalid username or password');
+    }
+   
+});    
+
+</script>
+</body>
+</html>

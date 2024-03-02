@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgba(211, 234, 211, 0.755);
+}
+h2{
+ 
+    padding: 15px;
+    text-align: center;
+    color:rgb(93, 105, 93);
+}
+
+.form{
+    margin:0 auto;
+    margin-top:150px;
+    width:800px;
+     height: 300px; 
+    padding-bottom:30px;
+    padding-top:10px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px rgb(93, 105, 93);
+    box-sizing: border-box;
+}
+
+
+.form-style{
+    margin:25px;
+    font-size: medium ;
+    font-weight: bold;
+    color:rgb(93, 105, 93);
+}
+
+
+
+input{
+    border:1px solid rgb(93, 105, 93);
+    margin-top: 5px;
+    padding:5px;
+    width:300px;
+    height:20px;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: 0;
+}
+.align-center{
+    text-align:center;
+}
+
+button{
+    width:320px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(93, 105, 93);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    width:320px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(61, 69, 61);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+}
+
+form div p{
+    font-weight: bold;
+    color:rgb(93, 105, 93);
+
+}
+form div p a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.input-text .error{
+    color:red;
+    margin-bottom: 15px;
+     font-size:12px; 
+}
+
+img{
+    width:30px;
+    height:50px;
+ } 
+nav{
+    /* height:70px; */
+    padding:20px;
+    width:100%;
+    font-size:20px;
+    background-color: rgb(93, 105, 93); 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color:white;
+}
+ul{
+    list-style-type: none;
+}
+
+nav li {
+ display: inline; 
+ margin:0 8px;
+}
+
+nav a{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background-color: white;
+    color:rgb(93, 105, 93);
+    padding:5px;
+    border-radius: 5px;
+}
+
+ .line{
+    height:3px;
+    width:20px;
+    background-color: white;
+    margin-bottom: 3px;
+ }
+
+ .menu{
+    cursor: pointer;
+    display: none;
+ } 
+
+ @media all and (max-width:560px){
+    nav{
+        flex-direction: column;
+    }
+
+    nav li{
+        display: block;
+        padding:10px 0;
+    }
+    ul{
+        text-align: center;
+        display: none;
+    }
+
+    .logo{
+        align-self: flex-start;
+        margin:10px 0px 0px 20px;
+    }
+
+    .menu{
+        display: block;
+        position:absolute;
+        right:20px;
+        top:25px;
+    }
+ }
+
+ .showmenu{
+    display: block;
+ }
+
+ table{
+    margin: auto;
+    margin-top:50px;
+    margin-bottom: 30px;
+    color:rgb(93, 105, 93);
+    border: 1px solid rgb(93, 105, 93);
+    border-radius: 5px;
+ }
+
+ table th{
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 18px;
+    padding: 10px;
+ }
+
+ table tr td{
+    text-align: left;
+    padding:5px;
+
+ }
+
+ .topspace{
+
+    margin-top: 100px;
+    text-align: center;
+ }
+ button.addbutton{
+  
+    width:100px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(93, 105, 93);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+    cursor: pointer;  
+ }
+
+ button.addbutton:hover{
+    width:100px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(61, 69, 61);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+}
+
+ button.editbutton, button.viewbutton, button.deletebutton{
+
+ width:80px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(93, 105, 93);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+    cursor: pointer;  
+    float:right;
+ }
+
+ button.editbutton:hover,button.viewbutton:hover,button.deletebutton:hover{
+    width:80px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(61, 69, 61);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+}
+
+button.goback{
+    
+    width:100px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(93, 105, 93);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+    cursor: pointer;
+ }
+
+ button.goback:hover{
+    width:100px;
+    height:30px;
+    font-size:medium;
+    background-color:rgb(61, 69, 61);
+    border-radius: 5px;
+    border: 1px solid rgb(93, 105, 93);
+    color:white;
+    padding:5px;
+    margin:10px;
+    font-weight: bold;
+}

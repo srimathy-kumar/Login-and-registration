@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <div class="container">
+        <form class="form2" id="registerForm" action="login.html">
+            <h2>Registration Form</h2>
+            <div class="form-style">
+            <div class="input-text">
+                <label for="user">Username</label><br>
+                <input type="text" name="user" id="user" placeholder="Enter Username"><br>
+                <div class="error" id="nameErr"></div>
+            </div>
+            <div class="input-text">
+                <label for="email">Email-id</label><br>
+                <input type="text" name="email" id="email" placeholder="Enter Email-id">
+                <div class="error" id="emailErr"></div>
+            </div>
+            <div class="input-text">
+                <label for="pass">Password</label><br>
+                <input type="password" name="pass" id="pass" placeholder="Enter Password">
+                <div class="error" id="passErr"></div>
+            </div>
+            <div class="input-text">
+                <label for="cpass">Confirm Password</label><br>
+                <input type="password" name="cpass" id="cpass" placeholder="Confirm Password">
+                <div class="error" id="cpassErr"></div>
+            </div>
+        </div>
+            <div class="align-center">
+                <button type="submit" name="register">Register</button>
+            </div>
+            <div  class="align-center">
+                <p>Already user? <a href="login.html">Login</a></p>
+            </div> 
+
+        </form>
+
+    </div>
+
+    <script>
+   
+ const registerForm = document.querySelector('#registerForm');
+ const username = document.querySelector('#user');
+ const email = document.querySelector('#email');
+ const pass = document.querySelector('#pass');
+ const cpass = document.querySelector('#cpass');
+
+
+registerForm.addEventListener('submit', function(event){
+      if(!validateInput()) {
+        event.preventDefault();
+       }
+  });
+
+ function validateInput(){
+    const usernameVal = username.value.trim();
+    const emailVal = email.value.trim();
+    const passVal = pass.value.trim();
+    const cpassVal = cpass.value.trim();
+
+    let isValid = true;
+
+    if(usernameVal === ''){
+        isValid = false;
+        setError(username, 'Username is required');
+    }
+    else{
+        setSuccess(username);
+    }
+
+    if(emailVal === ''){
+        isValid = false;
+        setError(email, 'Email is required');
+    }
+    else if(!validateEmail(emailVal)){
+        isValid = false;
+        setError(email,'Please enter a valid email');
+    }
+    else{
+        setSuccess(email);
+    }
+
+    if(passVal === ''){
+        isValid = false;
+        setError(pass, 'password is required');
+    }
+    else if(passVal.length<8){
+        isValid = false;
+        setError(pass,'Password must contain atleast 8 characters');
+    }
+    else{
+        setSuccess(pass);
+    }
+
+    if(cpassVal === ''){
+        isValid = false;
+        setError(cpass, 'Confirm password is required');
+    }
+    else if(cpassVal !== passVal){
+        isValid = false;
+        setError(cpass,'Password does not match');
+    }
+    else{
+         setSuccess(cpass);
+        
+    }
+
+     return isValid;
+
+}
+
+
+
+function setError(element,message){
+    const inputText = element.parentElement;
+    const errorElement = inputText.querySelector('.error')
+
+    errorElement.innerText = message;
+    inputText.classList.add('error')
+    inputText.classList.remove('success')
+}
+
+function setSuccess(element){
+    const inputText = element.parentElement;
+    const errorElement = inputText.querySelector('.error')
+
+    errorElement.innerText = ' ';
+    inputText.classList.add('success')
+    inputText.classList.remove('error')
+}
+
+const validateEmail = (email) =>{
+    return String(email)
+    .toLowerCase()
+    .match(
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    );
+};
+
+</script>
+    
+</body>
+</html>
